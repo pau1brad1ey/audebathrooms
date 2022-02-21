@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 // import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { Navbar, NavItem } from 'react-bootstrap'
 import Scrollspy from 'react-scrollspy'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -9,22 +8,22 @@ import 'font-awesome/css/font-awesome.min.css'
 import './theme.css'
 
 const Header = () => (
-  <Navbar inverse collapseOnSelect fixedTop color='faded' id='navbar-main'>
-    <Navbar.Header>
+  <Navbar collapseOnSelect fixed='top' id='navbar-main' variant='dark'>
+    <div className='container'>
       <Navbar.Brand>
          Justin Harrison
        </Navbar.Brand>
       <Navbar.Toggle />
-    </Navbar.Header>
-    <Navbar.Collapse>
-      <Scrollspy className='nav navbar-nav' items={['home', 'services', 'portfolio', 'team', 'contact']} currentClassName={'active'}>
-        <NavItem href='/#home'>Home</NavItem>
-        <NavItem href='/#services'> Services</NavItem>
-        <NavItem href='/#portfolio'> Our work</NavItem>
-        <NavItem href='/#team'> Meet the Team</NavItem>
-        <NavItem href='/#contact'> Contact</NavItem>
-      </Scrollspy>
-    </Navbar.Collapse>
+      <Navbar.Collapse>
+        <Scrollspy className='nav navbar-nav' items={['home', 'services', 'portfolio', 'team', 'contact']} currentClassName={'active'}>
+          <NavItem href='/#home'>Home</NavItem>
+          <NavItem href='/#services'> Services</NavItem>
+          <NavItem href='/#portfolio'> Our work</NavItem>
+          <NavItem href='/#team'> Meet the Team</NavItem>
+          <NavItem href='/#contact'> Contact</NavItem>
+        </Scrollspy>
+      </Navbar.Collapse>
+    </div>
   </Navbar>
 )
 
@@ -50,13 +49,9 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
-    {children()}
+    {children}
     <Footer />
   </div>
 )
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
-}
 
 export default TemplateWrapper

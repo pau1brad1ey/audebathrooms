@@ -2,5 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Aude Bathrooms`
   },
-  plugins: [`gatsby-plugin-react-helmet`]
+  plugins: [
+    `gatsby-plugin-react-helmet`
+  ]
 }
